@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Quality Predictor</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; text-align: center; padding: 50px; }
+        form { background: white; padding: 20px; border-radius: 8px; display: inline-block; box-shadow: 0px 0px 15px rgba(0,0,0,0.1); }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #800020; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Predictor de Calidad de Vino Tinto</h2>
+    <form action="/predict" method="post">
+        <input type="number" step="any" name="alcohol" placeholder="Alcohol (ej: 10.5)" required>
+        <input type="number" step="any" name="v_acidity" placeholder="Volatile Acidity (ej: 0.5)" required>
+        <input type="number" step="any" name="sulphates" placeholder="Sulphates (ej: 0.6)" required>
+        <input type="number" step="any" name="citric" placeholder="Citric Acid (ej: 0.3)" required>
+        <input type="number" step="any" name="sulfur" placeholder="Total Sulfur Dioxide (ej: 40)" required>
+        <button type="submit">Predecir Calidad</button>
+    </form>
+    <br>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
